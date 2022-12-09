@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .b1 {
+      background-image: url('/static/images/payment4.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+  </style>
+</head>
+
+<body class="b1">
+  {{>navbarhome}}
+
+  <div class="text-center">
+
+    <h1 class="text-center" style="margin-left:0%;"> Payment Here! </h1>
+    <div class="container py-5">
+    </div>
+    <!-- End -->
+    <div style="margin-top: -80px;">
+      <div class="col-lg-6 mx-auto">
+        <div class="card ">
+          <div class="card-header">
+            <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+              <!-- Credit card form tabs -->
+              <ul style="list-style:none">
+                <li class="nav-item">
+                  <a href="#credit-card" class="nav-link active ">
+                    <i class="fas fa-credit-card mr-2" style="margin-left:%"></i><b>Card Payment</b>
+                  </a>
+                </li>
+
+              </ul>
+            </div> <!-- End -->
+            <!-- Credit card form content -->
+            <div class="tab-content">
+              <!-- credit card info-->
+              <div id="credit-card" class="tab-pane fade show active pt-3">
+                <form role="form" onsubmit="event.preventDefault()">
+                  <div class="form-group"> <label for="username">
+                      <h6 style="color: black; font-size:medium; margin-left:%">Card Owner</h6>
+                    </label> <input type="text" name="username" placeholder="Card Owner Name" required
+                      class="form-control " style="margin-left:22%"> </div>
+                  <div class="form-group"> <label for="cardNumber">
+                      <h6 style="color: black; font-size:medium; margin-left:%">Card number</h6>
+                    </label>
+                    <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number"
+                        class="form-control " style="margin-left:10%" required>
+                      <div class="input-group-append"> <span class="input-group-text text-muted">
+                          <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i
+                            class="fab fa-cc-amex mx-1"></i> </span> </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col-sm-12">
+                      <div class="form-group"> <label><span class="hidden-xs">
+                            <h6 style="color: black; font-size:medium; margin-left:%;">
+                              Expiration Date</h6>
+                          </span></label>
+                        <div class="input-group"> <input font-size:medium; type="number" placeholder="MM"
+                            name="expiration" class="form-control" style="margin-left:%" required> <input type="number"
+                            placeholder="YY" name="" class="form-control" required> </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group mb-4"> <label data-toggle="tooltip"
+                          title="Three digit CV code on the back of your card">
+                          <h6 style="margin-left:%; color: black; font-size:medium;">CVV <i
+                              class="fa fa-question-circle d-inline"></i></h6>
+                        </label> <input type="text" required class="form-control" style="margin-left:20%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <h4>Click here to Confirm Payment and get receipt copy of booking:</h4>
+                    <center style="display: flex; justify-content:center">
+                      <a href="/download/{{data}}" target="_blank" class="btn btn-primary"
+                        style="text-align:center ;">Confirm Payment</a>
+                    </center>
+                  </div>
+                </form>
+              </div>
+            </div> <!-- End -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+
+<body>
+
+    {{>navbarhome}}
+
+    <div class="text">
+        <h1 class="text-center" style="text-align: center;">Cab Details!</h1>
+    </div>
+
+    <div class="container">
+        {{!-- <a href="/cab" class="btn btn-primary">+Add New Cab Deatails! </a> --}}
+        <table class="table table-striped mt-4">
+            <tr>
+                <th>Cab_Id</th>
+                <th>Cab_No</th>
+                <th>Seat_Capacity</th>
+                <th>Model</th>
+                <th>Driver_Id</th>
+
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>{{this.dataValues.Cab_Id}}</td>
+                <td>{{this.dataValues.Cab_No}}</td>
+                <td>{{this.dataValues.Seat_Capacity}}</td>
+                <td>{{this.dataValues.Model}}</td>
+                <td>{{this.dataValues.driver_id}}</td>
+
+                <td style="display:flex;background-color:rgb(197, 41, 142);width:fit-content;border-radius:10px">
+                <a href="/admincabupdate/ {{this.dataValues.Cab_Id}}" style="text-decoration: none;"><button
+                        style="background-color:green ;border-radius:10px">Update</button></a>
+                <a href="/admincabdelete/{{this.dataValues.Cab_Id}}" class="text-danger"
+                    onclick="return confirm('Are you sure you want to delete this')"
+                    style="text-decoration: none;"><button
+                        style="background-color:yellow ;border-radius:10px">Delete</button></a>
+            </td>
+               
+            </tr>
+            {{/each}}
+        </table>
+        {{!-- <p class="text-end">You are logged in as:
+            <b>{{identity.firstName}} {{identity.lastName}}</b>
+        </p> --}}
+    </div>
+</body>
+
+</html>

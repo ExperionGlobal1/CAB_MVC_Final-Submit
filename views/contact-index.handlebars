@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {{>navbarhome}}
+
+    <div class="container">
+        <pre></pre>
+        <table class="table table-striped mt-4">
+            <h1 style="text-align: center;"> Contact Details</h1>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Country</th>
+                <th>Subject</th>
+
+
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>{{this.dataValues.id}}</td>
+                <td>{{this.dataValues.firstname}}</td>
+                <td>{{this.dataValues.lastname}}</td>
+                <td>{{this.dataValues.country}}</td>
+                <td>{{this.dataValues.subject}}</td>
+
+                {{!-- <td style="display:flex;background-color:rgb(72, 16, 127);width:fit-content;border-radius:10px; ">
+                    <a href="/cabupdateindex/ {{this.dataValues.Cab_Id}}" style="text-decoration: none;"><button style="background-color:green ;border-radius:10px">Update</button></a> --}}
+                <td>
+                    <a href="/contact_delete/{{this.dataValues.id}}" class="text-danger"
+                        onclick="return confirm('Are you sure you want to delete this')" style="text-decoration: none;"><button style="background-color:rgb(219, 185, 32) ;border-radius:10px">Delete</button></a>
+                </td>
+
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+</body>
+
+</html>

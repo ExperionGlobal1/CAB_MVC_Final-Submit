@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{>navbarhome}}
+
+
+    <div class="container" id="body">
+        <div class="text">
+            <h1 class="text-center">Download Receipt</h1>
+        </div>
+
+        <table class="table table-striped mt-4">
+            {{!-- {{#each data}} --}}
+            <tr>
+                <th>Your booking Id :</th>
+                <td>{{dataValues.id}}</td>
+            </tr>
+            <tr>
+                <th>PickUp :</th>
+                <td>{{dataValues.pickup}}</td>
+            </tr>
+            <tr>
+                <th>Destination :</th>
+                <td>{{dataValues.destination}}</td>
+            </tr>
+            <tr>
+                <th>Date Of Travelling:</th>
+                <td>{{dataValues.dot}}</td>
+            </tr>
+            <tr>
+                <th>Time Of Travelling:</th>
+                <td>{{dataValues.time}}</td>
+            </tr>
+
+            <tr>
+                <th> No of Passenger:</th>
+                <td>{{dataValues.passenger}}</td>
+            </tr>
+            {{!-- {{/each}} --}}
+        </table>
+    </div>
+    <div class="footer">
+        <center><button class="btn btn-primary" id="download-button" name="download"
+                onclick="generatePDF();">Download</button></center>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const button = document.getElementById('download-button');
+        function generatePDF() {
+
+            const element = document.getElementById('body');
+            html2pdf().from(element).save();
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+         body {
+            background-image: url('/static/images/mmap.jpg');
+            background-size:100% 100% ;
+        }
+    </style>
+</head>
+<body>
+      {{>navbarhome}}
+</body>
+</html>
+
+<div class="box">
+    <div class="box1">
+        <form method="post" action="" class="box2">
+            <p style="font-size: 36px; text-align: center;margin-left:-140px;"><b>Book Your Trip</b></p>
+
+            <label for="pickup"><b>Pick up</b></label>
+            <select id="country" name="pickup">
+               <option value="Kochi">Kochi</option>
+                <option value="Kakkanad">Kakkanad</option>
+                <option value="Edapally">Edapally</option>
+            </select><br>
+
+            {{!-- <input type="text" id="pickup" name="pickup" placeholder="pickup" class="form-control" required><br /> --}}
+            <label for="destination"> <b>Destination</b></label>
+            <select id="country" name="destination">
+                <option value="Kochi">Kochi</option>
+                <option value="Kakkanad">Kakkanad</option>
+                <option value="Edapally">Edapally</option>
+            </select><br>
+
+            {{!-- <input type="text" id="destination" name="destination" placeholder="destination" class="form-control" required><br /> --}}
+            
+            <label for="dot"><b>Date Of Travel </b></label>
+            <input type="date" id="dot" name="dot" placeholder="Enter Date of Travel"
+                style="height:30px; width: 380px; padding:10px; background-color: #f1f1f1; border: none; border-radius: 10px;"
+                class="form-control" required />
+            <label for="dot"><b>Time </b></label>
+            <input type="time" id="time" name="time" placeholder="Enter current time"
+                style="height:30px; width: 380px; padding:10px; background-color: #f1f1f1; border: none; border-radius: 10px;"
+                class="form-control" required />
+            <label for="passenger"><b>No. Of Passenger</b></label><br />
+            <input type="text" id="passenger" name="passenger" placeholder="passenger" class="form-control"
+                required><br />
+            <input type="checkbox" id="agree" name="agree" value="1" style="width: 15px; height: 15px;" required><b
+                style="font-size: 20px;" >Send OTP</b>
+            <button type="submit" class="btn" style="margin-left:50px ;"><b>Book Cab</b></button>
+            {{#if message}}
+            <p class="text-danger">{{message}}</p>
+            {{/if}}
+
+        </form>
+    </div>
+</div>

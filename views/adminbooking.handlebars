@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      {{>navbarhome}}
+</body>
+</html>
+
+<div class="text">
+    <h1 class="text-center" style="text-align: center;">Cab Booking History</h1>
+</div>
+<div class="container">
+
+    {{!-- <a href="/booking" class="btn btn-primary" style="text-decoration: none;"> + Add New Booking Details! </a> --}}
+    <pre></pre>
+    <table class="table table-striped mt-4">
+       
+        <tr>
+            <th>Id</th>
+            <th>Pickup</th>
+            <th>Destination</th>
+            <th>Date Of Travelling</th>
+            <th>Time Of Travelling</th>
+            <th>No of Passenger</th>
+
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.id}}</td>
+            <td>{{this.dataValues.pickup}}</td>
+            <td>{{this.dataValues.destination}}</td>
+            <td>{{this.dataValues.dot}}</td>
+            <td>{{this.dataValues.time}}</td>
+            <td>{{this.dataValues.passenger}}</td>
+
+            <td style="display:flex;background-color:rgb(30, 67, 124);width:fit-content;border-radius:10px">
+                <a href="/download/ {{this.dataValues.id}}" style="text-decoration: none;"><button
+                        style="background-color:green ;border-radius:10px">Download Invoice</button></a>
+                {{!-- <a href="/adminbookdelete/{{this.dataValues.id}}" class="text-danger"
+                    onclick="return confirm('Are you sure you want to delete this')"
+                    style="text-decoration: none;"><button
+                        style="background-color:yellow ;border-radius:10px">Delete</button></a> --}}
+            </td>
+           
+        </tr>
+        {{/each}}
+    </table>
+    {{!-- <p class="text-end">You are Signin in as:
+        <b>{{identity.firstName}} {{identity.lastName}}</b>
+    </p> --}}
+</div>

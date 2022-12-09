@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    {{>navbar2}}
+
+    <div class="text">
+        <h1 class="text-center" style="text-align: center;">User Booked </h1>
+    </div>
+    <div class="container">
+        <pre></pre>
+        <table class="table table-striped mt-4">
+
+            <tr>
+                <th>Id</th>
+                <th>Pickup</th>
+                <th>Destination</th>
+                <th>Date Of Travelling</th>
+                <th>Time Of Travelling</th>
+                <th>No of Passenger</th>
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>{{this.dataValues.id}}</td>
+                <td>{{this.dataValues.pickup}}</td>
+                <td>{{this.dataValues.destination}}</td>
+                <td>{{this.dataValues.dot}}</td>
+                <td>{{this.dataValues.time}}</td>
+                <td>{{this.dataValues.passenger}}</td>
+
+                <td >
+                    <button style="background-color:green; border-radius:10px ;">Accept</button>
+                    <button style="background-color: yellow; border-radius:10px ;"><a href="/" style="text-decoration:none ;">Reject</a></button>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+        {{!-- <p class="text-end">You are Signin in as:
+            <b>{{identity.firstName}} {{identity.lastName}}</b>
+        </p> --}}
+    </div>
+</body>
+
+</html>

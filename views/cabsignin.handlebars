@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('/static/images/login.jpg');
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>navbarhome}}
+
+    <div class="box">
+        <div class="box1">
+            <form name="signinform" method="post" class="box2">
+                <p style="font-size: 36px; text-align: center;margin-left:-140px"><b>Login</b></p>
+
+                <label for="email"><b>Email id </b></label><br />
+                <input type="text" placeholder="Enter email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    name="email" id="email" class="form-control" required><br />
+                <label for="Password"> <b>Password</b></label><br>
+                <input type="password" id="Password" name="Password" placeholder="Password" minlength="8" maxlength="25"
+                    class="psw" class="form-control" required><br />
+                <h4 id="error" style="color: red;"></h4>
+                <table>
+                    <tr><button type="submit" class="btn" style="margin-left:40px ;">Login</button>
+                        {{#if message}}
+                        <p class="text-danger">{{message}}</p>
+                        {{/if}}
+
+                    </tr>
+                </table>
+                <label style="margin-left:100px ;">Forgot <a href="#"
+                        style="color: rgb(219, 21, 14);">password?</a></label>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

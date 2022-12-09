@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      {{>navbarhome}}
+</body>
+</html>
+
+<div class="container">
+    <h1 class="text-center" style="text-align: center;"> Update Driver Details?</h1>
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form method="post" class="driver">
+                <div class="text1">
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td><input type="text" name="name" id="name" class="form-control"
+                                value="{{data.dataValues.Name}}"></td>
+                    </tr>
+
+                    <br>
+                    <div>
+                        <tr>
+                            <td><label for="email">Email</label></td>
+                            <td><input type="text" name="email" id="email" class="form-control"
+                                    value="{{data.dataValues.Email}}"></td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td><label for="password">Password</label></td>
+                            <td><input type="password" name="password" id="password" class="form-control"
+                                    value="{{data.dataValues.Password}}"></td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td>
+                                <label for="mobile">Mobile</label>
+                            </td>
+                            <td>
+
+                                <input type="text" name="mobile" id="mobile" class="form-control"
+                                    value="{{data.dataValues.Mobile}}">
+                            </td>
+                        </tr>
+
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td><label for="address">Address</label> </td>
+                            <td>
+                                <input type="text" name="address" id="address" class="form-control"
+                                    value="{{data.dataValues.Address}}">
+                            </td>
+
+                        </tr>
+
+
+                    </div>
+                    <br>
+                    <div>
+                        <tr><label for="experience">Experience</label> </td>
+                            <td>
+                            <td>
+                                <input type="text" name="exp" id="exp" class="form-control"
+                                    value="{{data.dataValues.Experience}}">
+                            </td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td>
+                                <label for="dl">DL_NO</label>
+                            </td>
+                            <td>
+                                <input type="text" name="dl" id="dl" class="form-control"
+                                    value="{{data.dataValues.DL}}">
+                            </td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td>
+                                <label for="dob">DOB</label>
+                            </td>
+                            <td>
+                                <input type="date" name="dob" id="dob" class="form-control"
+                                    value="{{data.dataValues.DOB}}">
+                            </td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td>
+                                <label for="ex_dl">Exp_Dl_Date</label>
+                            </td>
+                            <td>
+                                <input type="date" name="exp_dl" id="exp_dl" class="form-control"
+                                    value="{{data.dataValues.Exp_DL}}">
+                            </td>
+                        </tr>
+                    </div>
+                    <div class="d-grid mt-4">
+                        <button class="btn btn-primary"> Confirm Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

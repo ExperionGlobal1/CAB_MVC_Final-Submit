@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(242, 240, 235);
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>navbar1}}
+
+    <div class="text">
+        <h1 class="text-center" style="text-align: center;">Available Cab Here!</h1>
+    </div>
+
+    <div class="container">
+
+        <table class="table table-striped mt-4">
+            <tr>
+                <th>Cab_Id</th>
+                <th>Cab_No</th>
+                <th>Seat_Capacity</th>
+                <th>Model</th>
+                <th>Driver_Id</th>
+
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>{{this.dataValues.Cab_Id}}</td>
+                <td>{{this.dataValues.Cab_No}}</td>
+                <td>{{this.dataValues.Seat_Capacity}}</td>
+                <td>{{this.dataValues.Model}}</td>
+                <td>{{this.dataValues.driver_id}}</td>
+
+                <td>
+                    <a href="/booking/{{this.dataValues.id}}"
+                        style="text-decoration:none;"><button
+                            style="background-color:rgb(10, 164, 69); border-radius:5px;color:rgb(240, 232, 232);display:flex;">Book</button></a>
+
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+        {{!-- <p class="text-end">You are logged in as:
+            <b>{{identity.firstname}} {{identity.lastname}}</b>
+        </p> --}}
+    </div>
+</body>
+
+</html>

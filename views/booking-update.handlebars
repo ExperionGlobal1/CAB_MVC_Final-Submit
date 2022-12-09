@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      {{>navbarhome}}
+</body>
+</html>
+
+<div class="box">
+    <div class="box1">
+        <form method="post" action="" class="box2">
+            <p style="font-size: 36px; text-align: center;"><b>Booking Update</b></p>
+            <label for="pickup"><b>Pick up</b></label><br>
+            <input type="text" id="pickup" name="pickup" placeholder="pickup" class="form-control"
+                value="{{data.dataValues.pickup}}"><br />
+            <label for="destination"> <b>Destination</b></label><br>
+            <input type="text" id="destination" name="destination" placeholder="destination" class="form-control"
+                value="{{data.dataValues.destination}}"><br />
+            <label for="dot"><b>Date Of Travel </b></label>
+            <input type="date" id="dot" name="dot" placeholder="Enter Date of Travel"
+                style="height:30px; width: 380px; padding:10px; background-color: #f1f1f1; border: none; border-radius: 10px;"
+                class="form-control" value="{{data.dataValues.dot}}" />
+            <label for="dot"><b>Time </b></label>
+            <input type="time" id="time" name="time" placeholder="Enter current time"
+                style="height:30px; width: 380px; padding:10px; background-color: #f1f1f1; border: none; border-radius: 10px;"
+                class="form-control" value="{{data.dataValues.time}}" />
+            <label for="passenger"><b>No. Of Passenger</b></label><br />
+            <input type="text" id="passenger" name="passenger" placeholder="passenger" class="form-control"
+                value="{{data.dataValues.passenger}}"><br />
+            {{!-- <label for="mobile"><b>Mobile No. </b></label><br />
+            <input type="text" placeholder="Enter mobileno" name="mobile" class="form-control"
+                value="{{data.dataValues.mobile}}"><br /> --}}
+            <input type="checkbox" id="agree" name="agree" value="1" style="width: 15px; height: 15px;" required><b
+                style="font-size: 20px;">Send OTP</b>
+            <button type="submit" class="btn" style="margin-left:50px ;"><b>Confirm Update</b></button>
+
+
+        </form>
+    </div>
+</div>

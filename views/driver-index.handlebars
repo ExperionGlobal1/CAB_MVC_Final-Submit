@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{>navbarhome}}
+
+    <div class="text">
+        <h1 class="text-center" style="text-align: center;">Driver Details!</h1>
+    </div>
+
+    <div class="container">
+        {{!-- <a href="/driver" class="btn btn-primary">+Add New Driver Deatails! </a> --}}
+        <table class="table table-striped mt-4">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>DOB</th>
+                <th>Experience</th>
+                <th>DL_No</th>
+                <th>Exp_DL_Date</th>
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>{{this.dataValues.id}}</td>
+                <td>{{this.dataValues.Name}}</td>
+                <td>{{this.dataValues.Email}}</td>
+                <td>{{this.dataValues.Password}}</td>
+                <td>{{this.dataValues.Mobile}}</td>
+                <td>{{this.dataValues.Address}}</td>
+                <td>{{this.dataValues.DOB}}</td>
+                <td>{{this.dataValues.Experience}}</td>
+                <td>{{this.dataValues.DL}}</td>
+                <td>{{this.dataValues.Exp_DL}}</td>
+
+                <td style="display:flex;background-color:rgb(15, 48, 145);width:fit-content;border-radius:10px ">
+                    <a href="/driverUpdate/ {{this.dataValues.id}}" style="text-decoration: none;"><button
+                            style="background-color:green ;border-radius:10px">Update</button></a>
+                    <a href="/driverDelete/{{this.dataValues.id}}" class="text-danger"
+                        onclick="return confirm('Are you sure you want to delete this')"
+                        style="text-decoration: none;"><button
+                            style="background-color:yellow ;border-radius:10px">Delete</button></a>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+        <p class="text-end">You are logged in as:
+            <b>{{identity.Name}} </b>
+        </p>
+    </div>
+</body>
+
+</html>

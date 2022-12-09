@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{>navbarhome}}
+
+    <div class="text">
+        <h1 class="text-center" style="text-align: center;">Fare Cost Chat </h1>
+    </div>
+    <div class="container">
+        <pre></pre>
+        <table class="table table-striped mt-4">
+
+            <tr>
+                <th>Id</th>
+                <th>Pickup</th>
+                <th>Destination</th>
+                <th>Price</th>
+                {{!-- <th>Booking_Id</th> --}}
+
+            {{!-- </tr>
+            {{#each data}}
+            <h1>{{this.dataValues}}</h1>
+            <tr>
+                <td>{{this.dataValues.id}}</td>
+                <td>{{this.dataValues.pickup}}</td>
+                <td>{{this.dataValues.destination}}</td>
+                <td>{{this.dataValues.price}}</td>
+                {{!-- <td>{{this.dataValues.Booking_id}}</td> 
+               
+               <td style="display:flex;background-color:rgb(15, 48, 145);width:fit-content;border-radius:10px ">
+                    <a href="/payNow/{{this.dataValues.id}}" style="text-decoration: none;"><button
+                            style="background-color:green ;border-radius:10px">PayNow</button></a>
+                   
+                </td>
+
+
+            </tr>
+            {{/each}}  --}}
+            {{!-- 2 --}}
+             </tr>
+            {{#each data}}
+        
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.pickup}}</td>
+                <td>{{this.destination}}</td>
+                <td>{{this.price}}</td>
+                {{!-- <td>{{this.dataValues.Booking_id}}</td> --}}
+               
+               <td style="display:flex;background-color:rgb(15, 48, 145);width:fit-content;border-radius:10px ">
+                    <a href="/payNow/{{this.id}}" style="text-decoration: none;"><button
+                            style="background-color:green ;border-radius:10px">PayNow</button></a>
+                   
+                </td>
+
+
+            </tr>
+            {{/each}}
+        </table>
+
+    </div>
+
+
+
+</body>
+
+</html>

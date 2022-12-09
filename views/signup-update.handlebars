@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      {{>navbarhome}}
+</body>
+</html>
+
+<div class="box">
+    <div class="box1">
+        <form class="box2" name="regform" id="regform" method="post">
+            <p style="font-size: 36px; text-align: center;"><b> Update Register Details?</b></p>
+            <label for="firstname"><b>Firstname</b></label><br>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" class="form-control"
+                required value="{{data.dataValues.firstname}}"><br />
+            <label for="lastname"> <b>Lastname</b></label><br>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" class="form-control" required
+                value="{{data.dataValues.lastname}}"><br />
+            <label for="dob"><b>Date Of Birth </b></label>
+            <input type="date" id="dob" name="dob" placeholder="Enter Date of Birth"
+                style="height:30px; width: 380px; padding:10px; background-color: #f1f1f1; border: none; border-radius: 10px;"
+                class="form-control" required value="{{data.dataValues.dob}}" />
+            <label for="mobile"><b>Mobile No. </b></label><br />
+            <input type="text" placeholder="Enter mobileno" name="mobile" class="form-control" required
+                value="{{data.dataValues.mobile}}"><br />
+            <label for="email"><b>Email id </b></label><br />
+            <input type="text" placeholder="Enter email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                name="email" id="email" class="form-control" value="{{data.dataValues.email}}"><br />
+            <label for="Password">
+                <bPassword< /b>
+            </label><br>
+            <input type="password" id="Password" name="Password" placeholder="Password" minlength="8" maxlength="25"
+                class="psw" class="form-control" value="{{data.dataValues.Password}}"><br />
+
+            <p id="err" style="color:red; font-size: 20px;"></p>
+            <input type="checkbox" id="agree" name="agree" value="1" required><b style="font-size: 20px;">I agree to
+                the terms and conditions</b>
+
+            <table>
+                <tr>
+                    <button type="submit" class="btn" style="margin-left:50px ;">Confirm update</button>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<script>
+    var email = document.forms['regform']['email'];
+    // alert(email)
+    var password = document.forms['regform']['Password'];
+    var btn = document.getElementById('btn-login');
+    document.querySelectorAll('#regform input').forEach(e => {
+        e.addEventListener('keyup', function (event) {
+            console.log('added');
+            var isValid = true;
+            if (!email.validity.valid || !password.validity.valid) {
+                isValid = false;
+            }
+            if (password.value != cPassword.value) {
+                isValid = false;
+                console.log('invalid password')
+            }
+            if (!isValid) {
+                btn.setAttribute('disabled', true)
+                document.getElementById("err").innerHTML = "Invalid email or password";
+            }
+            else {
+                btn.removeAttribute('disabled');
+                document.getElementById("err").innerHTML = "";
+            }
+        })
+    });
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      {{>navbarhome}}
+</body>
+</html>
+
+<div class="container">
+    <h1 class="text-center" style="text-align: center;">Update Cab  Details Here!</h1>
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form method="post" class="driver">
+                <div class="text1">
+                    <div>
+                        <tr>
+                            <td><label for="name">Cab_No</label></td>
+                            <td><input type="text" name="Cab_No" id="Cab_No" class="form-control" value="{{data.dataValues.Cab_No}}"></td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td><label for="email">Seat_Capacity</label></td>
+                            <td><input type="number" name="Seat_Capacity" id="Seat_Capacity" class="form-control" value="{{data.dataValues.Seat_Capacity}}"></td>
+                        </tr>
+                    </div>
+                    <br>
+                    <div>
+                        <tr>
+                            <td>
+                                <label for="password">Model</label>
+                            </td>
+                            <td>
+                                <input type="text" name="Model" id="Model" class="form-control" value="{{data.dataValues.Model}}">
+                            </td>
+                        </tr>
+                    </div>
+                     <br>
+                    <div>
+                        <tr>
+                            <td>
+                                <label for="password">Driver_Id</label>
+                            </td>
+                            <td>
+                                <input type="text" name="driver_id" id="driver_id" class="form-control" value="{{data.dataValues.driver_id}}">
+                            </td>
+                        </tr>
+                    </div>
+                     <br>
+                    <div class="d-grid mt-4">
+                        <button class="btn btn-primary">Confirm Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

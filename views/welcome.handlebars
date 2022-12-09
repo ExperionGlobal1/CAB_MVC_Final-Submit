@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         body {
+            background-image: url('/static/images/data.jpg');
+           
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>navbar3}}
+
+    <form>
+        <div class="col-sm-6 offset-sm-4">
+            <h1 style="background:rgb(190, 190, 200);width:fit-content;border-radius:10px;">Data Base Details</h1>
+            <div class="col-sm-6 offset-sm-1" style="font-size: 30px;">
+                <tr>
+                    <td><label for="user"><a href="userdetail" style="text-decoration: none;color:rgb(237, 230, 230);background:rgb(234, 72, 14);width:fit-content;border-radius:15px;">
+                                User DataBase</a></label>
+                    </td>
+                </tr>
+                <pre></pre>
+                <tr>
+                    <td><label for="user"><a href="driverdetail" style="text-decoration: none;color:rgb(222, 214, 214);background:rgb(61, 11, 121);width:fit-content;border-radius:15px;">
+                                Driver
+                                DataBase</a></label>
+                    </td>
+                </tr>
+                <pre></pre>
+                <tr>
+                    <td><label for="user"><a href="admincabdetail" style="text-decoration: none;color:rgb(233, 229, 225);background:rgb(8, 118, 155);width:fit-content;border-radius:15px;">
+                                Cab
+                                DataBase</a></label>
+                    </td>
+                </tr>
+                <pre></pre>
+                {{!-- <tr>
+                    <td><label for="user"><a href="adminbookingdetail"
+                                style="text-decoration: none;color:rgb(236, 224, 224);background:rgb(17, 169, 88);width:fit-content;border-radius:15px;"> Booking
+                                DataBase</a></label></td>
+                </tr> --}}
+                <pre></pre>
+                <tr>
+                    <td><label for="user"><a href="contact_index"
+                                style="text-decoration: none;color:rgb(236, 224, 224);background:rgb(135, 207, 19);width:fit-content;border-radius:15px;"> Contact
+                                DataBase</a></label></td>
+                </tr>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+
+</html>
